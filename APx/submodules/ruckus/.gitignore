@@ -1,0 +1,10 @@
+html/
+latex/
+
+*.bit
+*.bin
+*.mcs
+*.ltx
+*.gz
+*.dcp
+__pycache__

@@ -1,0 +1,31 @@
+# Vim swap files
+.*.sw?
+
+# Backup files
+*.bak
+*~
+
+# Mac index files
+.DS_Store
+
+# generated simulation files
+sim/vivado/**/*.log
+sim/vivado/**/*.jou
+sim/vivado/**/*.pb
+sim/vivado/**/*.wdb
+sim/vivado/**/*.str
+sim/vivado/**/xsim.dir
+
+# build output directories
+syn/
+impl/
+
+# generated IP core files
+hdl/ip/**
+
+# Allow core definitions
+!*.xci
+!*.coe
+
+# allow dummy files to restore "empty" directories
+!.keep_empty_dir

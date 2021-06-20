@@ -1,0 +1,21 @@
+# Allow two clock cycles for ping and pong
+set_multicycle_path 2 -setup -from [get_cells {*/i_vertex_histogram/track_word_struct_reg*}] -to [get_cells {*/i_vertex_histogram/hist_arr*_reg*}]
+set_multicycle_path 1 -hold -from  [get_cells {*/i_vertex_histogram/track_word_struct_reg*}] -to [get_cells {*/i_vertex_histogram/hist_arr*_reg*}]
+set_multicycle_path 2 -setup -from [get_cells {*/i_vertex_histogram/hist_arr*_reg*}] -to [get_cells {*/i_vertex_histogram/hist_out_reg*}]
+set_multicycle_path 1 -hold -from  [get_cells {*/i_vertex_histogram/hist_arr*_reg*}] -to [get_cells {*/i_vertex_histogram/hist_out_reg*}]
+set_multicycle_path 2 -setup -from [get_cells {*/i_vertex_histogram/hist_arr*_reg*}] -to [get_cells {*/i_vertex_histogram/hist_arr*_reg*}]
+set_multicycle_path 1 -hold -from  [get_cells {*/i_vertex_histogram/hist_arr*_reg*}] -to [get_cells {*/i_vertex_histogram/hist_arr*_reg*}]
+# Copy for depper inst
+set_multicycle_path 2 -setup -from [get_cells {*/*/i_vertex_histogram/track_word_struct_reg*}] -to [get_cells {*/*/i_vertex_histogram/hist_arr*_reg*}]
+set_multicycle_path 1 -hold -from  [get_cells {*/*/i_vertex_histogram/track_word_struct_reg*}] -to [get_cells {*/*/i_vertex_histogram/hist_arr*_reg*}]
+set_multicycle_path 2 -setup -from [get_cells {*/*/i_vertex_histogram/hist_arr*_reg*}] -to [get_cells {*/*/i_vertex_histogram/hist_out_reg*}]
+set_multicycle_path 1 -hold -from  [get_cells {*/*/i_vertex_histogram/hist_arr*_reg*}] -to [get_cells {*/*/i_vertex_histogram/hist_out_reg*}]
+set_multicycle_path 2 -setup -from [get_cells {*/*/i_vertex_histogram/hist_arr*_reg*}] -to [get_cells {*/*/i_vertex_histogram/hist_arr*_reg*}]
+set_multicycle_path 1 -hold -from  [get_cells {*/*/i_vertex_histogram/hist_arr*_reg*}] -to [get_cells {*/*/i_vertex_histogram/hist_arr*_reg*}]
+# Copy for depper inst
+set_multicycle_path 2 -setup -from [get_cells {*/*/*/i_vertex_histogram/track_word_struct_reg*}] -to [get_cells {*/*/*/i_vertex_histogram/hist_arr*_reg*}]
+set_multicycle_path 1 -hold -from  [get_cells {*/*/*/i_vertex_histogram/track_word_struct_reg*}] -to [get_cells {*/*/*/i_vertex_histogram/hist_arr*_reg*}]
+set_multicycle_path 2 -setup -from [get_cells {*/*/*/i_vertex_histogram/hist_arr*_reg*}] -to [get_cells {*/*/*/i_vertex_histogram/hist_out_reg*}]
+set_multicycle_path 1 -hold -from  [get_cells {*/*/*/i_vertex_histogram/hist_arr*_reg*}] -to [get_cells {*/*/*/i_vertex_histogram/hist_out_reg*}]
+set_multicycle_path 2 -setup -from [get_cells {*/*/*/i_vertex_histogram/hist_arr*_reg*}] -to [get_cells {*/*/*/i_vertex_histogram/hist_arr*_reg*}]
+set_multicycle_path 1 -hold -from  [get_cells {*/*/*/i_vertex_histogram/hist_arr*_reg*}] -to [get_cells {*/*/*/i_vertex_histogram/hist_arr*_reg*}]

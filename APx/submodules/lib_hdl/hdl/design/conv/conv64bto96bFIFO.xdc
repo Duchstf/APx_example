@@ -1,0 +1,2 @@
+#set_false_path -from [filter [all_fanout -from [get_ports wr_clk] -flat -endpoints_only] {IS_LEAF}] -to [get_cells -hierarchical -filter {NAME =~ *gdm.dm_gen.dm*/gpr1.dout_i_reg*}]; # Original IP core constraint
+set_false_path -from [filter [all_fanout -from [get_nets -hierarchical -filter {NAME =~ *i_fifo_dist_118bx16*wr_clk}] -flat -endpoints_only] {IS_LEAF}] -to [get_cells -hierarchical -filter {NAME =~ *i_fifo_dist_118bx16*gdm.dm_gen.dm*/gpr1.dout_i_reg*}]
